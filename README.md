@@ -1,4 +1,4 @@
-# RoboticsPresentation
+# ReasoningRoboticsPresentation
 To generate the pdf run from the terminal the following commands:
 ```
 lualatex presentation.tex
