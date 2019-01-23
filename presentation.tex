@@ -23,6 +23,35 @@
         Intro.
     \end{frame}
 
+    \begin{frame}{Q-Learning}
+        Q-Learning brief description.
+        \begin{equation*}
+            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
+                \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t) \Big]
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame}{SARSA}
+        SARSA brief description.
+        \begin{equation*}
+            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
+                \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \Big]
+        \end{equation*}
+    \end{frame}
+
+    \begin{frame}{$\text{LTL}_f\text{/LDL}_f$ Non-Markovian Rewards}
+        $\text{LTL}_f\text{/LDL}_f$ non-Markovian rewards + integration
+        in our project.
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.95\textwidth]{images/rl-temporalgoals-pipeline.png}
+            \caption{Pipeline describing how the agent is interacting with the
+                world and how the robot features extractor and the goal features
+                extractor are used in order to handle non-Markovian rewards.}
+            \label{fig:rl-temporalgoals-pipeline}
+        \end{figure}
+    \end{frame}
+
     \begin{frame}{Non-Atari Breakout}
         Results of the paper and our starting point.
     \end{frame}
@@ -43,27 +72,6 @@
         \end{columns}
     \end{frame}
 
-    \begin{frame}{Q-Learning}
-        Q-Learning brief description.
-        \begin{equation*}
-            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
-                \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t) \Big]
-        \end{equation*}
-    \end{frame}
-
-    \begin{frame}{SARSA}
-        SARSA brief description.
-        \begin{equation*}
-            Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
-                \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \Big]
-        \end{equation*}
-    \end{frame}
-
-    \begin{frame}{$\text{LTL}_f\text{/LDL}_f$ Non-Markovian Rewards}
-        $\text{LTL}_f\text{/LDL}_f$ non-Markovian rewards + integration
-        in our project.
-    \end{frame}
-
     \section{Implementation}
 
     \begin{frame}{Robot Features Extraction}
@@ -78,11 +86,7 @@
         Algorithms.
     \end{frame}
 
-    \section{Experiments}
-
-    \begin{frame}{Experiments}
-        All the experiments.
-    \end{frame}
+    \input{experiments}
 
     \begin{frame}{Conclusion}
         Conclusion.
