@@ -1,15 +1,26 @@
 \begin{frame}{Q-Learning}
-    Q-Learning brief description.
+    Q-Learning is a temporal difference (TD) reinforcement learning algorithm.
+    
+    The Q-function is approximated through a Q-table that stores the expected rewards for taking action $A$ in state $S$.
     \begin{equation*}
-        Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
-            \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t) \Big]
+    Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
+    \gamma \max_{a} Q(S_{t+1}, a) - Q(S_t, A_t) \Big]
     \end{equation*}
+    
+    Off-policy algorithm: action at time $t+1$ independent from current policy.
+    
+    Converges to optimal policy if all state-action pairs are continuously updated.
 \end{frame}
 
 \begin{frame}{SARSA}
-    SARSA brief description.
+    SARSA is a TD reinforcement learning algorithm which uses a quintuple $\langle S_t, A_t, R_t, S_{t+1}, A_{t+1}\rangle$ from which takes name.
+    
     \begin{equation*}
         Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha \Big[ R_{t+1} +
             \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t) \Big]
     \end{equation*}
+    
+    On-policy algorithm: action $A_{t+1}$ chosen following current policy.
+    
+    Converge to optimal policy if each state-action pair is visited infinitely often.
 \end{frame}
